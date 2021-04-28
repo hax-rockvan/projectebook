@@ -1,0 +1,14 @@
+/** carousel-item **/
+.carousel-item {
+	height: 32rem;
+	background: #2f2b35;
+	color: white;
+	position: relative;
+}
+
+.overlay-image {
+	position: absolute;
+	background-position: center;
+	background-size: cover;
+	opacity: 0.5;
+}
