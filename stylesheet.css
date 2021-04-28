@@ -1,14 +1,17 @@
 /** carousel-item **/
-.carousel-item {
-	height: 32rem;
-	background: #2f2b35;
-	color: white;
-	position: relative;
+#HomeCarousel .carousel-item img {
+	object-fit: cover;
+	object-position: center;
+	height: 50vh;
+	overflow: hidden;
 }
 
-.overlay-image {
+#HomeCarousel .carousel-item::before {
+	content: '';
+	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+	display: block;
 	position: absolute;
-	background-position: center;
-	background-size: cover;
-	opacity: 0.5;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
 }
