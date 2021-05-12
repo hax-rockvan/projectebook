@@ -758,7 +758,7 @@
 						aria-hidden="true"
 					>
 						<div class="modal-dialog">
-							<form action="">
+							<form action="" name="submit-to-google-sheet">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title" id="bookRequest">
@@ -776,6 +776,7 @@
 										<!-- Request Form Details -->
 										<div class="form-floating mb-3">
 											<input
+												name="Book Tittle"
 												type="text"
 												class="form-control"
 												id="bookTittleInput"
@@ -788,6 +789,7 @@
 										</div>
 										<div class="form-floating mb-3">
 											<input
+												name="Author Name"
 												type="text"
 												class="form-control"
 												id="authorNameInput"
@@ -799,6 +801,7 @@
 										</div>
 										<div class="form-floating mb-3">
 											<input
+												name="Email Address"
 												type="email"
 												class="form-control"
 												id="emailInput"
@@ -815,7 +818,7 @@
 										</div>
 									</div>
 									<div class="modal-footer">
-										<button type="submit" class="btn btn-primary">
+										<button type="sumbit" class="btn btn-primary">
 											Hunt Book
 										</button>
 									</div>
@@ -1024,6 +1027,7 @@
 		<!-- End Footer -->
 
 		<!-- Scripts -->
+
 		<!-- Popper JS first, then Bootstrap JS -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1035,6 +1039,20 @@
 			integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
 			crossorigin="anonymous"
 		></script>
+
+		<!-- request form script -->
+		<script>
+			const scriptURL =
+				'https://script.google.com/macros/s/AKfycbwYca2kyLOAkAcubjqG4mtvmxCIRRaJsaKl4GA-8y2G85HSUxo/exec';
+			const form = document.forms['submit-to-google-sheet'];
+
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.then((response) => console.log('Success!', response))
+					.catch((error) => console.error('Error!', error.message));
+			});
+		</script>
 		<!-- End Scripts -->
 	</body>
 </html>
