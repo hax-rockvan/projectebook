@@ -1,12 +1,12 @@
-/** carousel-item **/
-#HomeCarousel .carousel-item img {
+/** heroCarousel **/
+#heroCarousel .carousel-item img {
 	object-fit: cover;
 	object-position: center;
 	height: 50vh;
 	overflow: hidden;
 }
 
-#HomeCarousel .carousel-item::before {
+#heroCarousel .carousel-item::before {
 	content: '';
 	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
 	display: block;

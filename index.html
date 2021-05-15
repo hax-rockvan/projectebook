@@ -21,7 +21,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow">
 			<div class="container">
 				<!-- Navbar Brand -->
-				<a href="index.html#HomeCarousel" class="navbar-brand">
+				<a href="index.html#heroCarousel" class="navbar-brand">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="40"
@@ -59,18 +59,18 @@
 							<a
 								class="nav-link active"
 								aria-current="page"
-								href="index.html#HomeCarousel"
+								href="index.html#heroCarousel"
 								>HOME</a
 							>
 						</li>
 						<li>
-							<a class="nav-link" href="shop.html">SHOP</a>
+							<a class="nav-link" href="pages/shop.html">SHOP</a>
 						</li>
 						<li>
-							<a class="nav-link" href="faq.html">FAQ</a>
+							<a class="nav-link" href="pages/faq.html">FAQ</a>
 						</li>
 						<li>
-							<a class="nav-link" href="contact.html">CONTACT US</a>
+							<a class="nav-link" href="pages/contact.html">CONTACT US</a>
 						</li>
 					</ul>
 				</div>
@@ -78,9 +78,9 @@
 		</nav>
 		<!-- End Navbar -->
 
-		<!-- HomeCarousel -->
+		<!-- Hero Carousel -->
 		<div
-			id="HomeCarousel"
+			id="heroCarousel"
 			class="carousel slide shadow mb-5 bg-body rounded"
 			data-bs-ride="carousel"
 		>
@@ -88,7 +88,7 @@
 			<div class="carousel-indicators">
 				<button
 					type="button"
-					data-bs-target="#HomeCarousel"
+					data-bs-target="#heroCarousel"
 					data-bs-slide-to="0"
 					class="active"
 					aria-current="true"
@@ -96,13 +96,13 @@
 				></button>
 				<button
 					type="button"
-					data-bs-target="#HomeCarousel"
+					data-bs-target="#heroCarousel"
 					data-bs-slide-to="1"
 					aria-label="Slide 2"
 				></button>
 				<button
 					type="button"
-					data-bs-target="#HomeCarousel"
+					data-bs-target="#heroCarousel"
 					data-bs-slide-to="2"
 					aria-label="Slide 3"
 				></button>
@@ -158,7 +158,7 @@
 			<button
 				class="carousel-control-prev"
 				type="button"
-				data-bs-target="#HomeCarousel"
+				data-bs-target="#heroCarousel"
 				data-bs-slide="prev"
 			>
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -167,14 +167,14 @@
 			<button
 				class="carousel-control-next"
 				type="button"
-				data-bs-target="#HomeCarousel"
+				data-bs-target="#heroCarousel"
 				data-bs-slide="next"
 			>
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
-		<!-- End HomeCarousel -->
+		<!-- End Hero Carousel -->
 
 		<!-- Featured item -->
 		<div class="container">
@@ -249,9 +249,9 @@
 
 		<!-- Popular Categories -->
 		<div
-			id="categorySlider"
 			class="carousel slide bg-dark pt-3 pb-5 mb-5"
 			data-bs-ride="carousel"
+			id="categorySlider"
 		>
 			<!--Slider Indicators-->
 			<div class="carousel-indicators">
@@ -740,7 +740,7 @@
 					<h3 class="mb-4">
 						Easy just fill out the request form and we will hunt them for you.
 					</h3>
-					<!-- Button trigger modal -->
+					<!-- Button modal trigger -->
 					<button
 						type="button"
 						class="btn btn-lg btn-info"
@@ -758,7 +758,7 @@
 						aria-hidden="true"
 					>
 						<div class="modal-dialog">
-							<form action="" name="submit-to-google-sheet">
+							<form action="" name="submit-to-google-sheet" id="requestForm">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title" id="bookRequest">
@@ -783,7 +783,6 @@
 												placeholder="Book Tittle"
 												aria-label="Book Tittle"
 												required
-												autofocus
 											/>
 											<label for="bookTittleInput">Book Tittle</label>
 										</div>
@@ -795,7 +794,6 @@
 												id="authorNameInput"
 												placeholder="John Doe"
 												aria-label="Author Name"
-												autofocus
 											/>
 											<label for="authorNameInput">Author Name</label>
 										</div>
@@ -809,7 +807,6 @@
 												aria-label="Email Address"
 												aria-describedby="emailNotice"
 												required
-												autofocus
 											/>
 											<label for="emailInput">Email Address</label>
 											<div id="emailNotice" class="form-text">
@@ -818,7 +815,19 @@
 										</div>
 									</div>
 									<div class="modal-footer">
-										<button type="sumbit" class="btn btn-primary">
+										<button
+											id="cancelRequest"
+											type="button "
+											class="btn btn-primary"
+											data-bs-dismiss="modal"
+										>
+											Cancel
+										</button>
+										<button
+											id="huntButton"
+											type="submit"
+											class="btn btn-primary"
+										>
 											Hunt Book
 										</button>
 									</div>
@@ -830,6 +839,45 @@
 			</div>
 		</div>
 		<!-- End Book Request -->
+
+		<!-- Toast -->
+		<div
+			class="position-fixed bottom-0 start-50 translate-middle-x p-3"
+			style="z-index: 5"
+		>
+			<div
+				id="liveToast"
+				class="toast hide"
+				role="alert"
+				aria-live="assertive"
+				aria-atomic="true"
+			>
+				<div class="d-flex bg-success shadow">
+					<div class="toast-body text-white">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="currentColor"
+							class="bi bi-check-circle-fill"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+							/>
+						</svg>
+						<strong>Successfully Sent Book Request.</strong>
+					</div>
+					<button
+						type="button"
+						class="btn-close btn-close-white me-2 m-auto"
+						data-bs-dismiss="toast"
+						aria-label="Close"
+					></button>
+				</div>
+			</div>
+		</div>
+		<!-- End Toast -->
 
 		<!-- Footer -->
 		<footer class="bg-dark text-white">
@@ -959,7 +1007,7 @@
 						<ul class="list-unstyled">
 							<li class="mb-2">
 								<a
-									href="#HomeCarousel"
+									href="#heroCarousel"
 									class="text-white"
 									style="text-decoration: none"
 									>Home</a
@@ -967,7 +1015,7 @@
 							</li>
 							<li class="mb-2">
 								<a
-									href="shop.html"
+									href="pages/shop.html"
 									class="text-white"
 									style="text-decoration: none"
 									>Shop</a
@@ -975,7 +1023,7 @@
 							</li>
 							<li class="mb-2">
 								<a
-									href="faq.html"
+									href="pages/faq.html"
 									class="text-white"
 									style="text-decoration: none"
 									>FAQ</a
@@ -983,7 +1031,7 @@
 							</li>
 							<li class="mb-2">
 								<a
-									href="donate.html"
+									href="pages/donate.html"
 									class="text-white"
 									style="text-decoration: none"
 									>Donate</a
@@ -1024,10 +1072,10 @@
 				</div>
 			</div>
 		</footer>
+
 		<!-- End Footer -->
 
 		<!-- Scripts -->
-
 		<!-- Popper JS first, then Bootstrap JS -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -1039,20 +1087,9 @@
 			integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
 			crossorigin="anonymous"
 		></script>
-
 		<!-- request form script -->
-		<script>
-			const scriptURL =
-				'https://script.google.com/macros/s/AKfycbwYca2kyLOAkAcubjqG4mtvmxCIRRaJsaKl4GA-8y2G85HSUxo/exec';
-			const form = document.forms['submit-to-google-sheet'];
-
-			form.addEventListener('submit', (e) => {
-				e.preventDefault();
-				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-					.then((response) => console.log('Success!', response))
-					.catch((error) => console.error('Error!', error.message));
-			});
-		</script>
+		<script src="scripts/submitToGoogle.js" type="text/javascript"></script>
+		<script src="scripts/requestForm.js" type="text/javascript"></script>
 		<!-- End Scripts -->
 	</body>
 </html>
