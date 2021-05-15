@@ -1,3 +1,4 @@
+// Request form modal close and toast alert
 document.getElementById('requestForm').addEventListener('submit', function () {
 	document.getElementById('bookTittleInput').value = '';
 	document.getElementById('authorNameInput').value = '';
@@ -11,3 +12,10 @@ document.getElementById('requestForm').addEventListener('submit', function () {
 	});
 	toastList.forEach((toast) => toast.show()); // This show them
 });
+
+// Subscriber Toast Alert
+document
+	.getElementById('subscriberForm')
+	.addEventListener('submit', function () {
+		document.getElementById('subscriberInput').value = '';
+	});
