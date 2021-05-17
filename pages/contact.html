@@ -114,7 +114,7 @@
 						</li>
 					</ul>
 					<!-- Form Details -->
-					<form action="">
+					<form method="post">
 						<div class="card-body">
 							<div class="row g-3 mb-3">
 								<div class="form-floating col-md-6">
@@ -279,8 +279,9 @@
 			class="position-fixed bottom-0 start-50 translate-middle-x p-3"
 			style="z-index: 5"
 		>
+			<!-- Book Request Toast -->
 			<div
-				id="liveToast"
+				id="bookRequestToast"
 				class="toast hide"
 				role="alert"
 				aria-live="assertive"
@@ -310,6 +311,38 @@
 					></button>
 				</div>
 			</div>
+			<!-- Subscriber Toast -->
+			<div
+				id="newsletterToast"
+				class="toast hide"
+				role="alert"
+				aria-live="assertive"
+				aria-atomic="true"
+			>
+				<div class="d-flex bg-success shadow">
+					<div class="toast-body text-white">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="currentColor"
+							class="bi bi-check-circle-fill"
+							viewBox="0 0 16 16"
+						>
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+							/>
+						</svg>
+						<strong>Thank you for Subscribing.</strong>
+					</div>
+					<button
+						type="button"
+						class="btn-close btn-close-white me-2 m-auto"
+						data-bs-dismiss="toast"
+						aria-label="Close"
+					></button>
+				</div>
+			</div>
 		</div>
 		<!-- End Toast -->
 
@@ -321,7 +354,7 @@
 					<div class="col-lg-4 mb-3">
 						<!-- Subscribe -->
 						<section>
-							<form action="">
+							<form action="" name="newsletterSubscriber" id="subscriberForm">
 								<div class="row d-flex justify-content-center">
 									<!-- Newsletter text-->
 									<div class="col-auto">
@@ -333,13 +366,14 @@
 									<div class="col-sm-12 col-md-auto">
 										<div class="mb-4">
 											<input
+												name="Subscriber"
+												id="subscriberInput"
 												type="email"
-												id="newsletterEmail"
 												class="form-control"
 												placeholder="Email Address"
-												aria-label="email"
+												aria-label="Subscriber"
+												aria-describedby="emailNotice"
 												required
-												autofocus
 											/>
 										</div>
 									</div>
@@ -441,7 +475,7 @@
 						<ul class="list-unstyled">
 							<li class="mb-2">
 								<a
-									href="../index.html#heroCarousel"
+									href="#heroCarousel"
 									class="text-white"
 									style="text-decoration: none"
 									>Home</a
@@ -449,7 +483,7 @@
 							</li>
 							<li class="mb-2">
 								<a
-									href="shop.html"
+									href="pages/shop.html"
 									class="text-white"
 									style="text-decoration: none"
 									>Shop</a
@@ -457,7 +491,7 @@
 							</li>
 							<li class="mb-2">
 								<a
-									href="faq.html"
+									href="pages/faq.html"
 									class="text-white"
 									style="text-decoration: none"
 									>FAQ</a
@@ -465,7 +499,7 @@
 							</li>
 							<li class="mb-2">
 								<a
-									href="donate.html"
+									href="pages/donate.html"
 									class="text-white"
 									style="text-decoration: none"
 									>Donate</a
@@ -522,7 +556,7 @@
 		></script>
 		<!-- request form script -->
 		<script src="../scripts/submitToGoogle.js" type="text/javascript"></script>
-		<script src="../scripts/requestForm.js" type="text/javascript"></script>
+		<script src="../scripts/forms.js" type="text/javascript"></script>
 		<!-- End Scripts -->
 	</body>
 </html>
