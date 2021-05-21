@@ -1,1128 +1,1394 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
-			crossorigin="anonymous"
-		/>
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="stylesheet.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+            crossorigin="anonymous"
+        />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="stylesheet.css" />
 
-		<title>eBook Hunter</title>
-	</head>
-	<body class="bg-light">
-		<!-- Navbar -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow">
-			<div class="container">
-				<!-- Navbar Brand -->
-				<a href="index.html#heroCarousel" class="navbar-brand">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="40"
-						height="40"
-						fill="currentColor"
-						class="bi bi-file-pdf-fill"
-						viewBox="0 0 16 16"
-					>
-						<path
-							d="M5.523 10.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.035 21.035 0 0 0 .5-1.05 11.96 11.96 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.888 3.888 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 4.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"
-						/>
-						<path
-							fill-rule="evenodd"
-							d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm.165 11.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.64 11.64 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.707 19.707 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"
-						/>
-					</svg>
-					eBook Hunter</a
-				>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#toggleMobileMenu"
-					aria-controls="toggleMobileMenu"
-					aria-expanded="false"
-					aria-label="toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
+        <title>eBook Hunter</title>
+    </head>
+    <body class="bg-light">
+        <!-- Navbar -->
+        <nav
+            class="
+                navbar navbar-expand-md navbar-dark
+                bg-dark
+                sticky-top
+                shadow
+            "
+        >
+            <div class="container">
+                <!-- Navbar Brand -->
+                <a href="index.html#heroCarousel" class="navbar-brand">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        height="40"
+                        fill="currentColor"
+                        class="bi bi-file-pdf-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M5.523 10.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.035 21.035 0 0 0 .5-1.05 11.96 11.96 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.888 3.888 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 4.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm.165 11.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.64 11.64 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.707 19.707 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"
+                        />
+                    </svg>
+                    eBook Hunter</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#toggleMobileMenu"
+                    aria-controls="toggleMobileMenu"
+                    aria-expanded="false"
+                    aria-label="toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-				<!-- Navbar Menu -->
-				<div class="collapse navbar-collapse" id="toggleMobileMenu">
-					<ul class="navbar-nav ms-auto text-center">
-						<li>
-							<a
-								class="nav-link active"
-								aria-current="page"
-								href="index.html#heroCarousel"
-								>HOME</a
-							>
-						</li>
-						<li>
-							<a class="nav-link" href="pages/shop.html">SHOP</a>
-						</li>
-						<li>
-							<a class="nav-link" href="pages/faq.html">FAQ</a>
-						</li>
-						<li>
-							<a class="nav-link" href="pages/contact.html">CONTACT US</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- End Navbar -->
+                <!-- Navbar Menu -->
+                <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li>
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="index.html#heroCarousel"
+                                >HOME</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link" href="pages/shop.html">SHOP</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="pages/faq.html">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="pages/contact.html"
+                                >CONTACT US</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="btn btn-sm btn-outline-success mt-1"
+                                href="#"
+                                role="button"
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    fill="currentColor"
+                                    class="bi bi-bag-fill"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"
+                                    />
+                                </svg>
+                                CART
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
 
-		<!-- Hero Carousel -->
-		<div
-			id="heroCarousel"
-			class="carousel slide shadow mb-5 bg-body rounded"
-			data-bs-ride="carousel"
-		>
-			<!--Carousel Indicators-->
-			<div class="carousel-indicators">
-				<button
-					type="button"
-					data-bs-target="#heroCarousel"
-					data-bs-slide-to="0"
-					class="active"
-					aria-current="true"
-					aria-label="Slide 1"
-				></button>
-				<button
-					type="button"
-					data-bs-target="#heroCarousel"
-					data-bs-slide-to="1"
-					aria-label="Slide 2"
-				></button>
-				<button
-					type="button"
-					data-bs-target="#heroCarousel"
-					data-bs-slide-to="2"
-					aria-label="Slide 3"
-				></button>
-			</div>
-			<!-- Carousel -->
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<div class="overlay-image">
-						<img
-							src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="d-block w-100"
-							alt="Books"
-						/>
-					</div>
+        <!-- Hero Carousel -->
+        <div
+            id="heroCarousel"
+            class="carousel slide shadow mb-5 bg-body rounded"
+            data-bs-ride="carousel"
+        >
+            <!--Carousel Indicators-->
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+            </div>
+            <!-- Carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="overlay-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="d-block w-100"
+                            alt="Books"
+                        />
+                    </div>
 
-					<div class="carousel-caption d-none d-md-block">
-						<h5>First slide label</h5>
-						<p>Some representative placeholder content for the first slide.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="overlay-image">
-						<img
-							src="https://images.unsplash.com/photo-1533906966484-a9c978a3f090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80"
-							class="d-block w-100"
-							alt="Tablet and coffee"
-						/>
-					</div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>
+                            Some representative placeholder content for the
+                            first slide.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1533906966484-a9c978a3f090?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80"
+                            class="d-block w-100"
+                            alt="Tablet and coffee"
+                        />
+                    </div>
 
-					<div class="carousel-caption d-none d-md-block">
-						<h5>Second slide label</h5>
-						<p>Some representative placeholder content for the second slide.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="overlay-image">
-						<img
-							src="https://images.unsplash.com/photo-1611328857214-a5aae689f21a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80"
-							class="d-block w-100"
-							alt="add advertisment image here"
-						/>
-					</div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>
+                            Some representative placeholder content for the
+                            second slide.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1611328857214-a5aae689f21a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80"
+                            class="d-block w-100"
+                            alt="add advertisment image here"
+                        />
+                    </div>
 
-					<div class="carousel-caption d-none d-md-block">
-						<h5>Third slide label</h5>
-						<p>Some representative placeholder content for the third slide.</p>
-					</div>
-				</div>
-			</div>
-			<!-- End Carousel -->
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>
+                            Some representative placeholder content for the
+                            third slide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Carousel -->
 
-			<!-- Navigation -->
-			<button
-				class="carousel-control-prev"
-				type="button"
-				data-bs-target="#heroCarousel"
-				data-bs-slide="prev"
-			>
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button
-				class="carousel-control-next"
-				type="button"
-				data-bs-target="#heroCarousel"
-				data-bs-slide="next"
-			>
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-		<!-- End Hero Carousel -->
+            <!-- Navigation -->
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- End Hero Carousel -->
 
-		<!-- Featured item -->
-		<div class="container">
-			<h2 class="pb-2 mb-4 border-bottom text-center">Featured Books</h2>
-			<div class="row pb-5 g-4">
-				<!--Featured book 1-->
-				<div class="col-lg">
-					<div class="card bg-dark text-light rounded">
-						<img
-							src="https://images.unsplash.com/photo-1549122728-f519709caa9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80"
-							class="card-img shadow"
-							alt="Insert Book Image here"
-						/>
-						<div class="card-img-overlay d-inline-flex flex-column">
-							<h5 class="card-title">Featured Ebook 1</h5>
-							<p class="card-text overflow-hidden flex-fill">
-								Featured Book Details Featured Book Details Featured Book
-								Details Featured Book Details Featured Book Details Featured
-								Book Details
-							</p>
-							<a href="#" class="btn btn-success text-end align-self-end"
-								>Purchase</a
-							>
-						</div>
-					</div>
-				</div>
-				<!--Featured book 2-->
-				<div class="col-lg">
-					<div class="card bg-dark text-light rounded">
-						<img
-							src="https://images.unsplash.com/photo-1549122728-f519709caa9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80"
-							class="card-img shadow"
-							alt="Insert Book Image here"
-						/>
-						<div class="card-img-overlay d-inline-flex flex-column">
-							<h5 class="card-title">Featured Ebook 2</h5>
-							<p class="card-text overflow-hidden flex-fill">
-								Featured Book Details Featured Book Details Featured Book
-								Details Featured Book Details Featured Book Details Featured
-								Book Details
-							</p>
-							<a href="#" class="btn btn-success text-end align-self-end"
-								>Purchase</a
-							>
-						</div>
-					</div>
-				</div>
-				<!--Featured book 3-->
-				<div class="col-lg">
-					<div class="card bg-dark text-light rounded">
-						<img
-							src="https://images.unsplash.com/photo-1549122728-f519709caa9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80"
-							class="card-img shadow"
-							alt="Insert Book Image here"
-						/>
-						<div class="card-img-overlay d-inline-flex flex-column">
-							<h5 class="card-title">Featured Ebook 3</h5>
-							<p class="card-text overflow-hidden flex-fill">
-								Featured Book Details Featured Book Details Featured Book
-								Details Featured Book Details Featured Book Details Featured
-								Book Details
-							</p>
-							<a href="#" class="btn btn-success text-end align-self-end"
-								>Purchase</a
-							>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Featured item -->
+        <!-- Featured item -->
+        <div class="container">
+            <h2 class="pb-2 mb-4 border-bottom text-center">Featured Books</h2>
+            <div class="row pb-5 g-4">
+                <!--Featured book 1-->
+                <div class="col-lg">
+                    <div class="card bg-dark text-light rounded">
+                        <img
+                            src="https://images.unsplash.com/photo-1549122728-f519709caa9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80"
+                            class="card-img shadow"
+                            alt="Insert Book Image here"
+                        />
+                        <div class="card-img-overlay d-inline-flex flex-column">
+                            <h5 class="card-title">Featured Ebook 1</h5>
+                            <p class="card-text overflow-hidden flex-fill">
+                                Featured Book Details Featured Book Details
+                                Featured Book Details Featured Book Details
+                                Featured Book Details Featured Book Details
+                            </p>
+                            <a
+                                href="#"
+                                class="btn btn-success text-end align-self-end"
+                                >Purchase</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!--Featured book 2-->
+                <div class="col-lg">
+                    <div class="card bg-dark text-light rounded">
+                        <img
+                            src="https://images.unsplash.com/photo-1549122728-f519709caa9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80"
+                            class="card-img shadow"
+                            alt="Insert Book Image here"
+                        />
+                        <div class="card-img-overlay d-inline-flex flex-column">
+                            <h5 class="card-title">Featured Ebook 2</h5>
+                            <p class="card-text overflow-hidden flex-fill">
+                                Featured Book Details Featured Book Details
+                                Featured Book Details Featured Book Details
+                                Featured Book Details Featured Book Details
+                            </p>
+                            <a
+                                href="#"
+                                class="btn btn-success text-end align-self-end"
+                                >Purchase</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured book 3 -->
+                <div class="col-lg">
+                    <div class="card bg-dark text-light rounded">
+                        <img
+                            src="https://images.unsplash.com/photo-1549122728-f519709caa9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80"
+                            class="card-img shadow"
+                            alt="Insert Book Image here"
+                        />
+                        <div class="card-img-overlay d-inline-flex flex-column">
+                            <h5 class="card-title">Featured Ebook 3</h5>
+                            <p class="card-text overflow-hidden flex-fill">
+                                Featured Book Details Featured Book Details
+                                Featured Book Details Featured Book Details
+                                Featured Book Details Featured Book Details
+                            </p>
+                            <a
+                                href="#"
+                                class="btn btn-success text-end align-self-end"
+                                >Purchase</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Featured item -->
 
-		<!-- Popular Categories -->
-		<div
-			class="carousel slide bg-dark pt-3 pb-5 mb-5"
-			data-bs-ride="carousel"
-			id="categorySlider"
-		>
-			<!--Slider Indicators-->
-			<div class="carousel-indicators">
-				<button
-					type="button"
-					data-bs-target="#categorySlider"
-					data-bs-slide-to="0"
-					class="active"
-					aria-current="true"
-					aria-label="Slide 1"
-				></button>
-				<button
-					type="button"
-					data-bs-target="#categorySlider"
-					data-bs-slide-to="1"
-					aria-label="Slide 2"
-				></button>
-				<button
-					type="button"
-					data-bs-target="#categorySlider"
-					data-bs-slide-to="2"
-					aria-label="Slide 3"
-				></button>
-			</div>
+        <!-- Popular Categories -->
+        <div
+            class="carousel slide bg-dark pt-3 pb-5 mb-5"
+            data-bs-ride="carousel"
+            id="categorySlider"
+        >
+            <!--Slider Indicators-->
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#categorySlider"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#categorySlider"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#categorySlider"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+            </div>
 
-			<div class="carousel-inner">
-				<h2 class="text-center text-white">Popular Categories</h2>
-				<!--Slider Category 1-->
-				<div class="carousel-item active">
-					<div class="row py-3 justify-content-center">
-						<!--Category 1-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+            <div class="carousel-inner">
+                <h2 class="text-center text-white">Popular Categories</h2>
+                <!--Slider Category 1-->
+                <div class="carousel-item active">
+                    <div class="row py-3 justify-content-center">
+                        <!--Category 1-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 1</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 1</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category 2-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category 2-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 2</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 2</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category 3-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category 3-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 3</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 3</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category  4-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category  4-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 4</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Slider Category 2-->
-				<div class="carousel-item">
-					<div class="row py-3 justify-content-center">
-						<!--Category 5-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 4</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Slider Category 2-->
+                <div class="carousel-item">
+                    <div class="row py-3 justify-content-center">
+                        <!--Category 5-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 5</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 5</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category 6-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category 6-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 6</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 6</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category 7-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category 7-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 7</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 7</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category  8-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category  8-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 8</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Slider Category 3-->
-				<div class="carousel-item">
-					<div class="row py-3 justify-content-center">
-						<!--Category 9-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 8</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Slider Category 3-->
+                <div class="carousel-item">
+                    <div class="row py-3 justify-content-center">
+                        <!--Category 9-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 9</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 9</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category 10-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category 10-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 10</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 10</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category 11-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category 11-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 11</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 11</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-						<!--Category  12-->
-						<div class="col-6 col-lg-2">
-							<div class="card text-center bg-dark text-white border-0">
-								<div>
-									<a href="shop.html"
-										><img
-											src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-											class="rounded-circle shadow"
-											width="150"
-											height="150"
-									/></a>
-								</div>
+                        <!--Category  12-->
+                        <div class="col-6 col-lg-2">
+                            <div
+                                class="
+                                    card
+                                    text-center
+                                    bg-dark
+                                    text-white
+                                    border-0
+                                "
+                            >
+                                <div>
+                                    <a href="shop.html"
+                                        ><img
+                                            src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                                            class="rounded-circle shadow"
+                                            width="150"
+                                            height="150"
+                                    /></a>
+                                </div>
 
-								<div class="card-body">
-									<h4 class="card-title">Category 12</h4>
-									<p class="card-text">Description of Category</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- SliderNavigation -->
-			<button
-				class="carousel-control-prev"
-				type="button"
-				data-bs-target="#categorySlider"
-				data-bs-slide="prev"
-			>
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button
-				class="carousel-control-next"
-				type="button"
-				data-bs-target="#categorySlider"
-				data-bs-slide="next"
-			>
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-		<!-- End Popular Categories -->
+                                <div class="card-body">
+                                    <h4 class="card-title">Category 12</h4>
+                                    <p class="card-text">
+                                        Description of Category
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SliderNavigation -->
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#categorySlider"
+                data-bs-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#categorySlider"
+                data-bs-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- End Popular Categories -->
 
-		<!-- Latest Addition -->
-		<div class="container">
-			<h2 class="pb-2 mb-4 border-bottom text-center">Latest Additions</h2>
-			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 pb-5">
-				<!--Latest book 1-->
-				<div class="col">
-					<div class="card shadow">
-						<img
-							src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="card-img-top"
-							alt="Latest Addition Image"
-						/>
-						<div class="card-img-overlay">
-							<span class="badge rounded-pill bg-success h1">NEW</span>
-						</div>
-						<div class="card-body">
-							<h5 class="card-title">Book Title</h5>
-							<p class="card-text">
-								Book Description Book Description Book Description Book
-								Description Book Description Book Description Book Description
-								Book Description Book Description
-							</p>
-						</div>
-						<div class="card-footer d-flex">
-							<h5 class="text-danger px-2"><s>20$</s></h5>
-							<h3 class="flex-fill">10$</h3>
-							<button type="button" class="btn btn-outline-primary">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!--Latest book 2-->
-				<div class="col">
-					<div class="card shadow">
-						<img
-							src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="card-img-top"
-							alt="Latest Addition Image"
-						/>
-						<div class="card-img-overlay">
-							<span class="badge rounded-pill bg-success h1">NEW</span>
-						</div>
-						<div class="card-body">
-							<h5 class="card-title">Book Title</h5>
-							<p class="card-text">
-								Book Description Book Description Book Description Book
-								Description Book Description Book Description Book Description
-								Book Description Book Description
-							</p>
-						</div>
-						<div class="card-footer d-flex">
-							<h5 class="text-danger px-2"><s>20$</s></h5>
-							<h3 class="flex-fill">10$</h3>
-							<button type="button" class="btn btn-outline-primary">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!--Latest book 3-->
-				<div class="col">
-					<div class="card shadow">
-						<img
-							src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="card-img-top"
-							alt="Latest Addition Image"
-						/>
-						<div class="card-img-overlay">
-							<span class="badge rounded-pill bg-success h1">NEW</span>
-						</div>
-						<div class="card-body">
-							<h5 class="card-title">Book Title</h5>
-							<p class="card-text">
-								Book Description Book Description Book Description Book
-								Description Book Description Book Description Book Description
-								Book Description Book Description
-							</p>
-						</div>
-						<div class="card-footer d-flex">
-							<h5 class="text-danger px-2"><s>20$</s></h5>
-							<h3 class="flex-fill">10$</h3>
-							<button type="button" class="btn btn-outline-primary">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!--Latest book 4-->
-				<div class="col">
-					<div class="card shadow">
-						<img
-							src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="card-img-top"
-							alt="Latest Addition Image"
-						/>
-						<div class="card-img-overlay">
-							<span class="badge rounded-pill bg-success h1">NEW</span>
-						</div>
-						<div class="card-body">
-							<h5 class="card-title">Book Title</h5>
-							<p class="card-text">
-								Book Description Book Description Book Description Book
-								Description Book Description Book Description Book Description
-								Book Description Book Description
-							</p>
-						</div>
-						<div class="card-footer d-flex">
-							<h5 class="text-danger px-2"><s>20$</s></h5>
-							<h3 class="flex-fill">10$</h3>
-							<button type="button" class="btn btn-outline-primary">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!--Latest book 5-->
-				<div class="col">
-					<div class="card shadow">
-						<img
-							src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="card-img-top"
-							alt="Latest Addition Image"
-						/>
-						<div class="card-img-overlay">
-							<span class="badge rounded-pill bg-success h1">NEW</span>
-						</div>
-						<div class="card-body">
-							<h5 class="card-title">Book Title</h5>
-							<p class="card-text">
-								Book Description Book Description Book Description Book
-								Description Book Description Book Description Book Description
-								Book Description Book Description
-							</p>
-						</div>
-						<div class="card-footer d-flex">
-							<h5 class="text-danger px-2"><s>20$</s></h5>
-							<h3 class="flex-fill">10$</h3>
-							<button type="button" class="btn btn-outline-primary">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!--Latest book 6-->
-				<div class="col">
-					<div class="card shadow">
-						<img
-							src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-							class="card-img-top"
-							alt="Latest Addition Image"
-						/>
-						<div class="card-img-overlay">
-							<span class="badge rounded-pill bg-success h1">NEW</span>
-						</div>
-						<div class="card-body">
-							<h5 class="card-title">Book Title</h5>
-							<p class="card-text">
-								Book Description Book Description Book Description Book
-								Description Book Description Book Description Book Description
-								Book Description Book Description
-							</p>
-						</div>
-						<div class="card-footer d-flex">
-							<h5 class="text-danger px-2"><s>20$</s></h5>
-							<h3 class="flex-fill">10$</h3>
-							<button type="button" class="btn btn-outline-primary">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End latest Addition -->
+        <!-- Latest Addition -->
+        <div class="container">
+            <h2 class="pb-2 mb-4 border-bottom text-center">
+                Latest Additions
+            </h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 pb-5">
+                <!--Latest book 1-->
+                <div class="col">
+                    <div class="card shadow">
+                        <img
+                            src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top"
+                            alt="Latest Addition Image"
+                        />
+                        <div class="card-img-overlay">
+                            <span class="badge rounded-pill bg-success h1"
+                                >NEW</span
+                            >
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">
+                                Book Description Book Description Book
+                                Description Book Description Book Description
+                                Book Description Book Description Book
+                                Description Book Description
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <h5 class="text-danger px-2"><s>20$</s></h5>
+                            <h3 class="flex-fill">10$</h3>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--Latest book 2-->
+                <div class="col">
+                    <div class="card shadow">
+                        <img
+                            src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top"
+                            alt="Latest Addition Image"
+                        />
+                        <div class="card-img-overlay">
+                            <span class="badge rounded-pill bg-success h1"
+                                >NEW</span
+                            >
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">
+                                Book Description Book Description Book
+                                Description Book Description Book Description
+                                Book Description Book Description Book
+                                Description Book Description
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <h5 class="text-danger px-2"><s>20$</s></h5>
+                            <h3 class="flex-fill">10$</h3>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--Latest book 3-->
+                <div class="col">
+                    <div class="card shadow">
+                        <img
+                            src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top"
+                            alt="Latest Addition Image"
+                        />
+                        <div class="card-img-overlay">
+                            <span class="badge rounded-pill bg-success h1"
+                                >NEW</span
+                            >
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">
+                                Book Description Book Description Book
+                                Description Book Description Book Description
+                                Book Description Book Description Book
+                                Description Book Description
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <h5 class="text-danger px-2"><s>20$</s></h5>
+                            <h3 class="flex-fill">10$</h3>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--Latest book 4-->
+                <div class="col">
+                    <div class="card shadow">
+                        <img
+                            src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top"
+                            alt="Latest Addition Image"
+                        />
+                        <div class="card-img-overlay">
+                            <span class="badge rounded-pill bg-success h1"
+                                >NEW</span
+                            >
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">
+                                Book Description Book Description Book
+                                Description Book Description Book Description
+                                Book Description Book Description Book
+                                Description Book Description
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <h5 class="text-danger px-2"><s>20$</s></h5>
+                            <h3 class="flex-fill">10$</h3>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--Latest book 5-->
+                <div class="col">
+                    <div class="card shadow">
+                        <img
+                            src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top"
+                            alt="Latest Addition Image"
+                        />
+                        <div class="card-img-overlay">
+                            <span class="badge rounded-pill bg-success h1"
+                                >NEW</span
+                            >
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">
+                                Book Description Book Description Book
+                                Description Book Description Book Description
+                                Book Description Book Description Book
+                                Description Book Description
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <h5 class="text-danger px-2"><s>20$</s></h5>
+                            <h3 class="flex-fill">10$</h3>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--Latest book 6-->
+                <div class="col">
+                    <div class="card shadow">
+                        <img
+                            src="https://images.unsplash.com/photo-1504598561342-6b76820ef3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top"
+                            alt="Latest Addition Image"
+                        />
+                        <div class="card-img-overlay">
+                            <span class="badge rounded-pill bg-success h1"
+                                >NEW</span
+                            >
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">
+                                Book Description Book Description Book
+                                Description Book Description Book Description
+                                Book Description Book Description Book
+                                Description Book Description
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <h5 class="text-danger px-2"><s>20$</s></h5>
+                            <h3 class="flex-fill">10$</h3>
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End latest Addition -->
 
-		<!-- Book Request -->
-		<div class="container-fluid bg-warning py-5">
-			<div class="row text-center">
-				<div class="col">
-					<h2 class="text-uppercase mb-3">
-						Can't find the eBook you are looking for?
-					</h2>
-					<h3 class="mb-4">
-						Easy just fill out the request form and we will hunt them for you.
-					</h3>
-					<!-- Button modal trigger -->
-					<button
-						type="button"
-						class="btn btn-lg btn-info"
-						data-bs-toggle="modal"
-						data-bs-target="#requestFormModal"
-					>
-						Request Book
-					</button>
-					<!-- Modal -->
-					<div
-						class="modal fade"
-						id="requestFormModal"
-						tabindex="-1"
-						aria-labelledby="requestFormModal"
-						aria-hidden="true"
-					>
-						<div class="modal-dialog">
-							<form action="" name="submit-to-google-sheet" id="requestForm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="bookRequest">
-											Book Request Form
-										</h5>
-										<button
-											type="button"
-											class="btn-close"
-											data-bs-dismiss="modal"
-											aria-label="Close"
-										></button>
-									</div>
-									<div class="modal-body">
-										<p>Kindly fill out the form below.</p>
-										<!-- Request Form Details -->
-										<div class="form-floating mb-3">
-											<input
-												name="Book Tittle"
-												type="text"
-												class="form-control"
-												id="bookTittleInput"
-												placeholder="Book Tittle"
-												aria-label="Book Tittle"
-												required
-											/>
-											<label for="bookTittleInput">Book Tittle</label>
-										</div>
-										<div class="form-floating mb-3">
-											<input
-												name="Author Name"
-												type="text"
-												class="form-control"
-												id="authorNameInput"
-												placeholder="John Doe"
-												aria-label="Author Name"
-											/>
-											<label for="authorNameInput">Author Name</label>
-										</div>
-										<div class="form-floating mb-3">
-											<input
-												name="Email Address"
-												type="email"
-												class="form-control"
-												id="emailInput"
-												placeholder="name@example.com"
-												aria-label="Email Address"
-												aria-describedby="emailNotice"
-												required
-											/>
-											<label for="emailInput">Email Address</label>
-											<div id="emailNotice" class="form-text">
-												We'll notify you via email once the book is available.
-											</div>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button
-											id="cancelRequest"
-											type="button "
-											class="btn btn-primary"
-											data-bs-dismiss="modal"
-										>
-											Cancel
-										</button>
-										<button
-											id="huntButton"
-											type="submit"
-											class="btn btn-primary"
-										>
-											Hunt Book
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Book Request -->
+        <!-- Book Request -->
+        <div class="container-fluid bg-warning py-5">
+            <div class="row text-center">
+                <div class="col">
+                    <h2 class="text-uppercase mb-3">
+                        Can't find the eBook you are looking for?
+                    </h2>
+                    <h3 class="mb-4">
+                        Easy just fill out the request form and we will hunt
+                        them for you.
+                    </h3>
+                    <!-- Button modal trigger -->
+                    <button
+                        type="button"
+                        class="btn btn-lg btn-info"
+                        data-bs-toggle="modal"
+                        data-bs-target="#requestFormModal"
+                    >
+                        Request Book
+                    </button>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="requestFormModal"
+                        tabindex="-1"
+                        aria-labelledby="requestFormModal"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <form
+                                action=""
+                                name="submit-to-google-sheet"
+                                id="requestForm"
+                            >
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5
+                                            class="modal-title"
+                                            id="bookRequest"
+                                        >
+                                            Book Request Form
+                                        </h5>
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Kindly fill out the form below.</p>
+                                        <!-- Request Form Details -->
+                                        <div class="form-floating mb-3">
+                                            <input
+                                                name="Book Tittle"
+                                                type="text"
+                                                class="form-control"
+                                                id="bookTittleInput"
+                                                placeholder="Book Tittle"
+                                                aria-label="Book Tittle"
+                                                required
+                                            />
+                                            <label for="bookTittleInput"
+                                                >Book Tittle</label
+                                            >
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input
+                                                name="Author Name"
+                                                type="text"
+                                                class="form-control"
+                                                id="authorNameInput"
+                                                placeholder="John Doe"
+                                                aria-label="Author Name"
+                                            />
+                                            <label for="authorNameInput"
+                                                >Author Name</label
+                                            >
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input
+                                                name="Email Address"
+                                                type="email"
+                                                class="form-control"
+                                                id="emailInput"
+                                                placeholder="name@example.com"
+                                                aria-label="Email Address"
+                                                aria-describedby="emailNotice"
+                                                required
+                                            />
+                                            <label for="emailInput"
+                                                >Email Address</label
+                                            >
+                                            <div
+                                                id="emailNotice"
+                                                class="form-text"
+                                            >
+                                                We'll notify you via email once
+                                                the book is available.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button
+                                            id="cancelRequest"
+                                            type="button "
+                                            class="btn btn-primary"
+                                            data-bs-dismiss="modal"
+                                        >
+                                            Cancel
+                                        </button>
+                                        <button
+                                            id="huntButton"
+                                            type="submit"
+                                            class="btn btn-primary"
+                                        >
+                                            Hunt Book
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Book Request -->
 
-		<!-- Toast -->
-		<div
-			class="position-fixed bottom-0 start-50 translate-middle-x p-3"
-			style="z-index: 5"
-		>
-			<!-- Book Request Toast -->
-			<div
-				id="bookRequestToast"
-				class="toast hide"
-				role="alert"
-				aria-live="assertive"
-				aria-atomic="true"
-			>
-				<div class="d-flex bg-success shadow">
-					<div class="toast-body text-white">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							fill="currentColor"
-							class="bi bi-check-circle-fill"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-							/>
-						</svg>
-						<strong>Successfully Sent Book Request.</strong>
-					</div>
-					<button
-						type="button"
-						class="btn-close btn-close-white me-2 m-auto"
-						data-bs-dismiss="toast"
-						aria-label="Close"
-					></button>
-				</div>
-			</div>
-			<!-- Subscriber Toast -->
-			<div
-				id="newsletterToast"
-				class="toast hide"
-				role="alert"
-				aria-live="assertive"
-				aria-atomic="true"
-			>
-				<div class="d-flex bg-success shadow">
-					<div class="toast-body text-white">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							fill="currentColor"
-							class="bi bi-check-circle-fill"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-							/>
-						</svg>
-						<strong>Thank you for Subscribing.</strong>
-					</div>
-					<button
-						type="button"
-						class="btn-close btn-close-white me-2 m-auto"
-						data-bs-dismiss="toast"
-						aria-label="Close"
-					></button>
-				</div>
-			</div>
-		</div>
-		<!-- End Toast -->
+        <!-- Toast -->
+        <div
+            class="position-fixed bottom-0 start-50 translate-middle-x p-3"
+            style="z-index: 5"
+        >
+            <!-- Book Request Toast -->
+            <div
+                id="bookRequestToast"
+                class="toast hide"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+            >
+                <div class="d-flex bg-success shadow">
+                    <div class="toast-body text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-check-circle-fill"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+                            />
+                        </svg>
+                        <strong>Successfully Sent Book Request.</strong>
+                    </div>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+            </div>
+            <!-- Subscriber Toast -->
+            <div
+                id="newsletterToast"
+                class="toast hide"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+            >
+                <div class="d-flex bg-success shadow">
+                    <div class="toast-body text-white">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-check-circle-fill"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+                            />
+                        </svg>
+                        <strong>Thank you for Subscribing.</strong>
+                    </div>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+            </div>
+        </div>
+        <!-- End Toast -->
 
-		<!-- Footer -->
-		<footer class="bg-dark text-white">
-			<div class="container">
-				<div class="row pt-5">
-					<!-- Newsletter -->
-					<div class="col-lg-4 mb-3">
-						<!-- Subscribe -->
-						<section>
-							<form action="" name="newsletterSubscriber" id="subscriberForm">
-								<div class="row d-flex justify-content-center">
-									<!-- Newsletter text-->
-									<div class="col-auto">
-										<p class="pt-2">
-											<strong>Sign up for our newsletter</strong>
-										</p>
-									</div>
-									<!-- Email input -->
-									<div class="col-sm-12 col-md-auto">
-										<div class="mb-4">
-											<input
-												name="Subscriber"
-												id="subscriberInput"
-												type="email"
-												class="form-control"
-												placeholder="Email Address"
-												aria-label="Subscriber"
-												aria-describedby="emailNotice"
-												required
-											/>
-										</div>
-									</div>
-									<!-- Subscribe button -->
-									<div class="col-auto">
-										<button type="submit" class="btn btn-primary mb-4">
-											Subscribe
-										</button>
-									</div>
-								</div>
-							</form>
-						</section>
-						<!-- Social media Icons -->
-						<section>
-							<row class="d-flex justify-content-center">
-								<!-- facebook -->
-								<div class="mx-2">
-									<a href="http://" target="_blank" rel="noopener noreferrer"
-										><svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="32"
-											height="32"
-											fill="gray"
-											class="bi bi-facebook"
-											viewBox="0 0 16 16"
-										>
-											<path
-												d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-											/>
-										</svg>
-									</a>
-								</div>
-								<!-- instagram -->
-								<div class="mx-2">
-									<a href="http://" target="_blank" rel="noopener noreferrer"
-										><svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="32"
-											height="32"
-											fill="gray"
-											class="bi bi-instagram"
-											viewBox="0 0 16 16"
-										>
-											<path
-												d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-											/>
-										</svg>
-									</a>
-								</div>
-								<!-- twitter -->
-								<div class="mx-2">
-									<a href="http://" target="_blank" rel="noopener noreferrer">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="32"
-											height="32"
-											fill="gray"
-											class="bi bi-twitter"
-											viewBox="0 0 16 16"
-										>
-											<path
-												d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-											/>
-										</svg>
-									</a>
-								</div>
-							</row>
-						</section>
-					</div>
-					<!-- Useful Links -->
-					<div class="col-6 col-lg-2 mb-3">
-						<h5 class="text-uppercase border-bottom pb-2">Links</h5>
-						<ul class="list-unstyled">
-							<li class="mb-2">
-								<a href="#" class="text-white" style="text-decoration: none"
-									>About</a
-								>
-							</li>
-							<li class="mb-2">
-								<a href="#" class="text-white" style="text-decoration: none"
-									>Privacy</a
-								>
-							</li>
-							<li class="mb-2">
-								<a href="#" class="text-white" style="text-decoration: none"
-									>DMCA</a
-								>
-							</li>
-							<li class="mb-2">
-								<a href="#" class="text-white" style="text-decoration: none"
-									>Refunds</a
-								>
-							</li>
-						</ul>
-					</div>
-					<!-- Menu -->
-					<div class="col-6 col-lg-2 mb-3">
-						<h5 class="text-uppercase border-bottom pb-2">Menu</h5>
-						<ul class="list-unstyled">
-							<li class="mb-2">
-								<a
-									href="#heroCarousel"
-									class="text-white"
-									style="text-decoration: none"
-									>Home</a
-								>
-							</li>
-							<li class="mb-2">
-								<a
-									href="pages/shop.html"
-									class="text-white"
-									style="text-decoration: none"
-									>Shop</a
-								>
-							</li>
-							<li class="mb-2">
-								<a
-									href="pages/faq.html"
-									class="text-white"
-									style="text-decoration: none"
-									>FAQ</a
-								>
-							</li>
-							<li class="mb-2">
-								<a
-									href="pages/donate.html"
-									class="text-white"
-									style="text-decoration: none"
-									>Donate</a
-								>
-							</li>
-						</ul>
-					</div>
-					<!-- Contact -->
-					<div class="col-6 col-lg-2 mb-3">
-						<h5 class="text-uppercase border-bottom pb-2">Contact</h5>
-						<ul class="list-unstyled">
-							<li class="d-inline-flex justify-content-center">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									fill="currentColor"
-									class="bi bi-envelope-fill m-1"
-									viewBox="0 0 16 16"
-								>
-									<path
-										d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
-									/>
-								</svg>
-								<a
-									href="mailto:ebookhunter.pdf@gmail.com"
-									target="_blank"
-									class="text-white"
-									style="text-decoration: none"
-									>ebookhunter.pdf@gmail.com</a
-								>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="row text-center">
-					<h6>2021 - eBookhunter - All Rights Reserved.</h6>
-				</div>
-			</div>
-		</footer>
-		<!-- End Footer -->
+        <!-- Footer -->
+        <footer class="bg-dark text-white">
+            <div class="container">
+                <div class="row pt-5">
+                    <!-- Newsletter -->
+                    <div class="col-lg-4 mb-3">
+                        <!-- Subscribe -->
+                        <section>
+                            <form
+                                action=""
+                                name="newsletterSubscriber"
+                                id="subscriberForm"
+                            >
+                                <div class="row d-flex justify-content-center">
+                                    <!-- Newsletter text-->
+                                    <div class="col-auto">
+                                        <p class="pt-2">
+                                            <strong
+                                                >Sign up for our
+                                                newsletter</strong
+                                            >
+                                        </p>
+                                    </div>
+                                    <!-- Email input -->
+                                    <div class="col-sm-12 col-md-auto">
+                                        <div class="mb-4">
+                                            <input
+                                                name="Subscriber"
+                                                id="subscriberInput"
+                                                type="email"
+                                                class="form-control"
+                                                placeholder="Email Address"
+                                                aria-label="Subscriber"
+                                                aria-describedby="emailNotice"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <!-- Subscribe button -->
+                                    <div class="col-auto">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary mb-4"
+                                        >
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                        <!-- Social media Icons -->
+                        <section>
+                            <row class="d-flex justify-content-center">
+                                <!-- facebook -->
+                                <div class="mx-2">
+                                    <a
+                                        href="http://"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="32"
+                                            height="32"
+                                            fill="gray"
+                                            class="bi bi-facebook"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <!-- instagram -->
+                                <div class="mx-2">
+                                    <a
+                                        href="http://"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="32"
+                                            height="32"
+                                            fill="gray"
+                                            class="bi bi-instagram"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <!-- twitter -->
+                                <div class="mx-2">
+                                    <a
+                                        href="http://"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="32"
+                                            height="32"
+                                            fill="gray"
+                                            class="bi bi-twitter"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </row>
+                        </section>
+                    </div>
+                    <!-- Useful Links -->
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5 class="text-uppercase border-bottom pb-2">Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a
+                                    href="#"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >About</a
+                                >
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="#"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >Privacy</a
+                                >
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="#"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >DMCA</a
+                                >
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="#"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >Refunds</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Menu -->
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5 class="text-uppercase border-bottom pb-2">Menu</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a
+                                    href="#heroCarousel"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="pages/shop.html"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >Shop</a
+                                >
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="pages/faq.html"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >FAQ</a
+                                >
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="pages/donate.html"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >Donate</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Contact -->
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5 class="text-uppercase border-bottom pb-2">
+                            Contact
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="d-inline-flex justify-content-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-envelope-fill m-1"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+                                    />
+                                </svg>
+                                <a
+                                    href="mailto:ebookhunter.pdf@gmail.com"
+                                    target="_blank"
+                                    class="text-white"
+                                    style="text-decoration: none"
+                                    >ebookhunter.pdf@gmail.com</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <h6>2021 - eBookhunter - All Rights Reserved.</h6>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
-		<!-- Scripts -->
-		<!-- Popper JS first, then Bootstrap JS -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-			integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
-			integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
-			crossorigin="anonymous"
-		></script>
-		<!-- request form script -->
-		<script src="scripts/submitToGoogle.js" type="text/javascript"></script>
-		<script src="scripts/forms.js" type="text/javascript"></script>
-		<!-- End Scripts -->
-	</body>
+        <!-- Scripts -->
+        <!-- Popper JS first, then Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+            crossorigin="anonymous"
+        ></script>
+        <!-- request form script -->
+        <script src="scripts/submitToGoogle.js" type="text/javascript"></script>
+        <script src="scripts/forms.js" type="text/javascript"></script>
+        <!-- End Scripts -->
+    </body>
 </html>
